@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./styles.css" rel="stylesheet">
+  <title>Document</title>
+
+
+</head>
+
+<body>
+  <p id="test" class="highlight"> this is a sample paragraph </p>
+  <input type="text" id="classinput" placeholder="enter class name">
+  <button onclick="addClass()">Add Class </button>
+
+  <section id="container">
+    <p id="paragraph1">This is paragraph 1.</p>
+    <button id="button1" onclick="toggleParagraph('paragraph1')">Show/Hide</button>
+
+    <p id="paragraph2">This is paragraph 2.</p>
+    <button id="button2" onclick="toggleParagraph('paragraph2')">Show/Hide</button>
+
+    <p id="paragraph3">This is paragraph 3.</p>
+    <button id="button3" onclick="toggleParagraph('paragraph3')">Show/Hide</button>
+
+    <section id="container">
+      <button id="button1">Click me</button>
+    </section>
+  </section>
+
+  <script>
+    function toggleParagraph(paragraphId) {
+      let paragraph = document.getElementById(paragraphId);
+      let button = document.getElementById(`button${paragraphId.replace('paragraph', '')}`);
+      if (paragraph.style.display === 'none') {
+        paragraph.style.display = 'block';
+        button.textContent = 'Hide';
+      } else {
+        paragraph.style.display = 'none';
+        button.textContent = 'Show';
+      }
+    }
+    let button = document.getElementById('button1');
+    button.addEventListener('click', function () {
+      button.textContent = 'Clicked!';
+      button.classList.add('unclickable');
+    });
+
+    function addClass() {
+      let className = document.getElementById('classInput').value;
+      let textElement = document.getElementById('text');
+      textElement.classList.add(className);
+    }
+  </script>
+
+
+</body>
+
+</html>
