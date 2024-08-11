@@ -1,21 +1,28 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact List</title>
     <link rel="stylesheet" href="styles.css">
+   
 </head>
 <body>
+    <button id="openPopupBtn">Create/Edit Contact</button>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopupBtn">&times;</span>
+            <h2>Create/Edit Contact</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="submit">Save Contact</button>
+            </form>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <h1> Phone Book</h1>
@@ -24,23 +31,27 @@
 
     <main>
         <div class="container">
-            <h2>Contact List</h2>
-            <ul class="contact-list">
-                <li>Name: Luna Moalim | Email: luna.moalim@gmail.com | Phone: 054638294 | City: Newyork </li>
-                <li>Name: Nicole Moalim| Email: nicole.moalim@outlook.com | Phone: 052986123| City: New york</li>
-                <li>Name: Steve johnson | Email: steve.johnson@gmail.com | Phone: 054789456 | City : new york</li>
-                
+            <h2>Create / Edit Contact List</h2>
+            <ul id="contactList">
+                <!-- Contacts will be dynamically added here -->
             </ul>
+            
+            <button id="deleteAllBtn">Delete All Contacts</button>
         </div>
+        
     </main>
+    
 
     <footer>
         <div class="container">
             <p>&copy;  My Contact List. <br>  All rights reserved. 2024 <br/> </p>
         </div>
     </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
 
-</body>
-</html>
+
+
