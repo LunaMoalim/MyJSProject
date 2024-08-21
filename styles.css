@@ -1,109 +1,191 @@
+/* General styles */
 body {
-    font-family: Arial;
-    line-height: 2.0;
-    margin: 2;
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-  
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-
 }
 
 header {
-    background-color: #3b4b5f;
-    color: #fff;
-    padding: 10px 0;
+    background: #f5f5f5;
+    padding: 10px;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    
 }
 
 main {
-    padding: 20px 0;
-
-}
-
-.contact-list {
-    list-style-type: none;
-    padding: 0;
-}
- 
-.contact-list li {
-    margin-bottom: 10px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
+    padding: 20px;
 }
 
 footer {
-    background-color: #2d3c4f;
-    color: #f3f4f8;
+    background: #f5f5f5;
+    padding: 10px;
     text-align: center;
-    
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-.popup {
+/* Contact List Styles */
+#contactList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.contact-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.contact-item span {
+    flex: 1;
+}
+
+.contact-item button {
+    margin-left: 5px;
+}
+
+.hidden {
     display: none;
+}
+
+/* Popup Styles */
+#popup {
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1000;
-}
-
-.popup-content {
-    background: #bca7a7;
-    margin: 15% auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
     padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
-    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    font-size: 20px;
+
+
+
+.contact-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
-button {
-    
-    margin: 10px;
-    padding: 5px 20px;
-    background-color: #007bff;
-    color: #fff;
+.contact-item span {
+    flex: 1;
+}
+
+.contact-item button {
+    margin-left: 5px;
+    background-color: #770000; 
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    color: white;
+    font-size: 0.9rem;
     cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
 }
+.contact-item:last-child {
+    border-bottom: none;
+
+}
+.contact-item:hover {
+    background-color: #e2e6ea; /* גוון אפור בהיר */
+    transform: translateY(-2px);}
+
+.hidden {
+    display: none;
+}
+
+
+
+ header h1 { 
+    margin: 0;
+    font-size: 2.5rem;
+ }
+
+ button {
+    background-color: #ff8181; /* צבע כחול */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
 button:hover {
-    background-color: #00a7b3;
+    background-color: #a6bacf; /* גוון כהה יותר של כחול */
+    transform: scale(1.05);
+}
 
+/* סגנונות לתיבת החיפוש */
+#search {
+   
+    padding: 0.7rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    
+}
+#contactList {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 
 
+
+
+#popupContent input, #popupContent textarea {
+    width: calc(100% - 1rem);
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#popupContent button {
+    background-color: #17a2b8; /* צבע טורקיז */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#popupContent button:hover {
+    background-color: #138496; /* גוון כהה יותר של טורקיז */
+    transform: scale(1.05);
+}
+
+#closePopupBtn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #007bff;
+}
+
+#closePopupBtn:hover {
+    color: #0056b3; /* גוון כהה יותר של כחול */
+}
